@@ -1,0 +1,4 @@
+interface:
+  display_name: "YD 动态 HTML 演示"
+  short_description: "从选题和参考素材设计电影感网页演示，交付可离线播放的单文件。"
+  default_prompt: "用 $yd-html-skill 把这些资料做成有逐拍动效的离线 HTML 演示。"

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <title>屋顶上的 100 升雨水 · 动态演示样例</title>
+  <!-- YD_INLINE_CSS -->
+</head>
+<body>
+<main id="stage" aria-label="屋顶雨水示例">
+  <div id="deck">
+    <section class="slide opener" data-title="屋顶上的 100 升雨水" data-chapter="雨水记录" data-beats="3" data-motion="cover" data-transition="iris" aria-labelledby="title-1">
+      <div class="rain-window" aria-hidden="true"></div>
+      <div class="title-block">
+        <p class="eyebrow">雨水记录 · 虚构演示</p>
+        <h1 id="title-1">屋顶上的<br><span>100</span> 升雨水</h1>
+        <p class="intro" data-in="1">同一次降雨，两种蓄水布置。</p>
+        <p class="opening-note" data-in="2">记下两项去向。蓄水，或者溢流。</p>
+      </div>
+      <p class="speaker-note" hidden>开场先看总降雨量，下一拍翻开记录册，再把注意力转到收集和溢流。此样例的数据是示意数字。</p>
+    </section>
+
+    <section class="slide survey" data-title="记录两种去向" data-chapter="记录方法" data-beats="3" data-motion="sheets" data-transition="leaf" aria-labelledby="title-2" hidden>
+      <div class="rain-window" aria-hidden="true"></div>
+      <div class="title-block">
+        <p class="eyebrow">水量账本 · 单位为升</p>
+        <h2 id="title-2">记录两种<br>去向</h2>
+        <p class="intro">两种布置都接到 100 升雨水。</p>
+      </div>
+      <div class="field-sheet">
+        <h3>水量记录簿</h3>
+        <p><span>屋顶来水</span><b>100 L</b></p>
+        <p data-in="1"><span>进入蓄水装置</span><b class="blue-ink">收集量</b></p>
+        <p data-in="2"><span>从出水口流出</span><b>溢流量</b></p>
+        <p class="balance" data-in="2">来水 = 收集量 + 溢流量</p>
+      </div>
+      <p class="speaker-note" hidden>用同一来水量对照两个布置。为展示动画，这个示意账本只分收集和溢流两项，忽略蒸发等其他去向。</p>
+    </section>
+
+    <section class="slide results" data-title="收集与溢流" data-chapter="对比结果" data-beats="3" data-transition="ink" aria-labelledby="title-3" hidden>
+      <div class="ruled-paper" aria-hidden="true"></div>
+      <div class="result-content">
+        <p class="eyebrow">两种布置 · 示意结果</p>
+        <h2 id="title-3">同样的来水量，<br>分到不同地方</h2>
+        <div class="choices" aria-label="选择蓄水布置">
+          <button type="button" data-layout="0" aria-pressed="true">布置 A</button>
+          <button type="button" data-layout="1" aria-pressed="false">布置 B</button>
+        </div>
+        <div id="pour" data-in="1" role="img" aria-label="布置 A：收集 35 升，溢流 65 升">
+          <div class="pour-capture"><b id="capture-value">35</b><span>升 · 收集</span></div>
+          <div class="pour-overflow"><b id="overflow-value">65</b><span>升 · 溢流</span></div>
+        </div>
+        <p class="result-line" data-in="2">在这个例子中，布置 B 多收集 20 升，溢流也少了 20 升。</p>
+      </div>
+      <p class="speaker-note" hidden>先让观众看同一条总量轴，再切换布置。动画只移动两段的分界。标出的数值是虚构示例。</p>
+    </section>
+    <canvas id="book" class="motion-canvas" aria-hidden="true" hidden></canvas>
+  </div>
+  <div id="wipe" aria-hidden="true" hidden><span></span></div>
+</main>
+<nav id="chrome" aria-label="演示导航">
+  <span id="chapter"></span>
+  <div id="timeline" aria-label="章节进度"></div>
+  <div class="nav-controls">
+    <button type="button" id="overview-btn" title="章节目录 (Esc)">目录</button>
+    <button type="button" id="notes-btn" title="讲稿 (N)">讲稿</button>
+    <button type="button" id="full-btn" title="全屏 (F)">全屏</button>
+    <button type="button" id="prev" aria-label="上一步">←</button>
+    <output id="pager"></output>
+    <button type="button" id="next" aria-label="下一步">→</button>
+  </div>
+</nav>
+<dialog id="overview" aria-labelledby="index-heading">
+  <header><h2 id="index-heading">演示目录</h2><form method="dialog"><button aria-label="关闭目录">×</button></form></header>
+  <div id="index-list"></div>
+  <p>← → 逐步播放 · ↑ ↓ 跳页 · N 讲稿 · F 全屏 · R 重播当前页</p>
+</dialog>
+<dialog id="notes" aria-labelledby="notes-title">
+  <header><h2 id="notes-title">本页讲稿</h2><form method="dialog"><button aria-label="关闭讲稿">×</button></form></header>
+  <p id="notes-body"></p>
+</dialog>
+<div id="live" class="sr-only" aria-live="polite"></div>
+<noscript><p class="no-script">请启用浏览器 JavaScript 以播放这个文件。</p></noscript>
+<!-- YD_INLINE_JS -->
+</body>
+</html>
